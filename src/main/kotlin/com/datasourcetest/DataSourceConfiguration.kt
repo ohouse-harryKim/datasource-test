@@ -45,10 +45,6 @@ class DataSourceConfiguration {
         .properties(hibernateProperties.toVendorProperties(properties))
         .mappingResources(*properties.mappingResources.toTypedArray())
         .build()
-        .also {
-            println("#BASE_CLASS_PATH: $BASE_CLASS_PATH")
-        }
-
         ?: throw ExceptionInInitializerError()
 
     @Bean
