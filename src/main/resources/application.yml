@@ -1,0 +1,24 @@
+spring:
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+  datasources:
+    reader:
+      url: jdbc:mysql://localhost:3306/datasourcetest1?useSSL=false
+      username: datasourcetest1
+      password: datasourcetest1
+      driverClassName: ${spring.datasource.driver-class-name}
+    writer:
+      url: jdbc:mysql://localhost:3306/datasourcetest2?useSSL=false
+      username: datasourcetest2
+      password: datasourcetest2
+      driverClassName: ${spring.datasource.driver-class-name}
+
+  jpa:
+    hibernate:
+      ddl-auto: validate
+    show-sql: on
+    properties:
+      hibernate:
+        format_sql: false
+        default_batch_fetch_size: 1000
+    database-platform: org.hibernate.dialect.MySQL5Dialect

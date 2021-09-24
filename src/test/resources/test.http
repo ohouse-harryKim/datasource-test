@@ -1,0 +1,17 @@
+### reader test
+GET http://localhost:8080/test/reader/1
+
+> {%
+    client.test("Request executed successfully", function() {
+        client.assert(response.body.value === "reader", "Response status shouldbe reader");
+    });
+%}
+
+### writer test
+GET http://localhost:8080/test/writer/1
+
+> {%
+    client.test("Request executed successfully", function() {
+        client.assert(response.body.value === "writer", "Response status shouldbe writer");
+    });
+%}
